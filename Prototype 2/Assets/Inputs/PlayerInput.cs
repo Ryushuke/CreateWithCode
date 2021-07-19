@@ -1,18 +1,16 @@
 using UnityEngine;
 
-[AddComponentMenu("Game/Jogador/Entrada de Comandos")]
-public class PlayerInput : MonoBehaviour, IHorizontalInput
+namespace Game.Inputs
 {
-	public float horizontalInput;
-	public float HorizontalInput => horizontalInput;
-
-	void Update()
+	[AddComponentMenu("Game/Jogador/Entrada de Comandos")]
+	public class PlayerInput : MonoBehaviour, IHorizontalInput
 	{
-		horizontalInput = Input.GetAxis("Horizontal");
-	}
-}
+		public float horizontalInput;
+		public float HorizontalInput => horizontalInput;
 
-public interface IHorizontalInput
-{
-	float HorizontalInput { get; }
+		void Update()
+		{
+			horizontalInput = Input.GetAxis("Horizontal");
+		}
+	}
 }

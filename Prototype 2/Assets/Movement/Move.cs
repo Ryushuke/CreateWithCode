@@ -1,35 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Game.Inputs;
 
-[RequireComponent(typeof(IHorizontalInput))]
-[AddComponentMenu("Game/Movimento")]
-public class Move : MonoBehaviour
+namespace Game.Movement
 {
-	public float speed = 10;
-	public float xRange = 10;
-	private IHorizontalInput controlHorizontalInput;
-
-	void Start()
+	[RequireComponent(typeof(IHorizontalInput))]
+	[AddComponentMenu("Game/Movimento")]
+	public class Move : MonoBehaviour
 	{
-		controlHorizontalInput = GetComponent<IHorizontalInput>();
-	}
+		public float speed = 10;
+		public float xRange = 10;
+		private IHorizontalInput controlHorizontalInput;
 
-	// Update is called once per frame
-	void FixedUpdate()
-	{
-		if(transform.position.x < -xRange)
+		void Start()
 		{
-			transform.position = new Vector3 (-xRange, transform.position.y, transform.position.z);
-			return;
+			controlHorizontalInput = GetComponent<IHorizontalInput>();
 		}
 
-		if(transform.position.x > xRange)
+		// Update is called once per frame
+		void FixedUpdate()
 		{
-			transform.position = new Vector3 (xRange, transform.position.y, transform.position.z);
-			return;
-		}
+			if(transform.position.x < -xRange)
+			{
+				transform.position = new Vector3 (-xRange, transform.position.y, transform.position.z);
+				return;
+			}
 
-		transform.Translate(Vector3.right * controlHorizontalInput.HorizontalInput * speed * Time.fixedDeltaTime);
+			if(transform.position.x > xRange)
+			{
+				transform.position = new Vector3 (xRange, transform.position.y, transform.position.z);
+				return;
+			}
+
+			transform.Translate(Vector3.right * controlHorizontalInput.HorizontalInput * speed * Time.fixedDeltaTime);
+		}
 	}
 }
