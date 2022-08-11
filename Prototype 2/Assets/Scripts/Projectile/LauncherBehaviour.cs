@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Game.Projectile
 {
 	[AddComponentMenu("Game/Jogador/Lançar Projeteis")]
-	public class LaucherBehaviour : MonoBehaviour
+	public class LauncherBehaviour : MonoBehaviour
 	{
 		[SerializeField]
 		private ProjectilePool _projectile;
