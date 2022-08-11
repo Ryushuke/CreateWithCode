@@ -4,18 +4,21 @@ using UnityEngine.Events;
 namespace Game.Inputs
 {
 	[AddComponentMenu("Game/Jogador/Entrada de Comandos")]
-	public class PlayerInput : MonoBehaviour, IHorizontalInput
+	public class PlayerInput : MonoBehaviour, IHorizontalInput, IShotInput
 	{
-		public float horizontalInput;
+		[SerializeField]
+		private UnityEvent _shotAction;
+		private float horizontalInput;
 
 		public float HorizontalInput => horizontalInput;
+		public UnityEvent ShotAction => _shotAction;
 
 		void Update()
 		{
 			horizontalInput = Input.GetAxis("Horizontal");
 
-			//if(Input.GetKeyDown(KeyCode.Space))
-
+			if(Input.GetKeyDown(KeyCode.Space))
+				_shotAction.Invoke();
 		}
 	}
 }
