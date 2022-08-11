@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.Pool;
+﻿using Game.Objects;
+using UnityEngine;
 
 namespace Game.Projectile
 {
@@ -7,32 +7,21 @@ namespace Game.Projectile
 	public class ProjectilePool : MonoBehaviour
 	{
 		[SerializeField]
-		private GameObject _projectile;
-		[Min(1)]
-		[SerializeField]
-		private int _capacity;
+		private ObjectPoolBehaviour _pool;
 
-		private ObjectPool<GameObject> pool;
-
-		public GameObject Get() => pool.Get();
+		public GameObject Get() => _pool.Get();
 
 		private void Awake()
 		{
-			pool = new ObjectPool<GameObject>(Create,
-				actionOnRelease: OnRelease,
-				defaultCapacity: _capacity);
+			_pool.OnReleaseAction.AddListener(OnRelease);
 		}
 
-		private GameObject Create()
+		private void OnDestroy()
 		{
-			GameObject go = Instantiate(_projectile, transform);
-			go.name = string.Format("{0} ({1:00})",
-				_projectile.name,
-				pool.CountAll);
-			return go;
+			_pool.OnReleaseAction.RemoveListener(OnRelease);
 		}
 
-		private void OnRelease(GameObject projectile)
+		private void OnRelease(PoolableBehaviour projectile)
 		{
 			projectile.transform.SetPositionAndRotation(transform.position, transform.rotation);
 		}
