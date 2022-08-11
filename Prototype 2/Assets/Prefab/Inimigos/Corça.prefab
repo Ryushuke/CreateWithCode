@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -8207276498284737419}
   - component: {fileID: 2630543580296093137}
   - component: {fileID: -1757992969200115713}
+  - component: {fileID: -1644979324920994030}
   m_Layer: 0
   m_Name: "Cor\xE7a"
   m_TagString: Untagged
@@ -77,6 +78,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.12, y: 4, z: 4}
   m_Center: {x: 0, y: 2, z: 0.5}
+--- !u!114 &-1644979324920994030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200240600611766827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0e0bfc1bbd94b4190d8a3b90dddf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1200240601620792579
 PrefabInstance:
   m_ObjectHideFlags: 0
