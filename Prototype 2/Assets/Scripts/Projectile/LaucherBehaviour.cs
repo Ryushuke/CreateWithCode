@@ -16,7 +16,11 @@ namespace Game.Projectile
 		[ContextMenu("Lançar")]
 		public void Launch()
 		{
-			var projectile = _projectile.Get();
+			GameObject projectile = _projectile.Get();
+
+			if(!projectile)
+				return;
+
 			projectile.transform.SetPositionAndRotation(_launchPoint.position, _launchPoint.rotation);
 			projectile.SetActive(true);
 		}
