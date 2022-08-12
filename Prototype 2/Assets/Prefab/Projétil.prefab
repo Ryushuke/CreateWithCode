@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1433355510578559772}
   - component: {fileID: 977536554785736258}
   - component: {fileID: 7503211330085654557}
+  - component: {fileID: 3683609072781874870}
   m_Layer: 0
   m_Name: "Proj\xE9til"
   m_TagString: Untagged
@@ -88,6 +89,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b0e0bfc1bbd94b4190d8a3b90dddf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3683609072781874870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993339585733434456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb01b71af1a0e4245af37bb0e4c23e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6993339586952435058
