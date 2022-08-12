@@ -11,16 +11,8 @@ namespace Game.Enemies
 		[SerializeField]
 		private SpawnPoint _spawnPoint;
 
-		private void Intantiate(GameObject enemy)
-		{
-			Vector3 position = _spawnPoint.GetPosition();
-			Quaternion rotation = _spawnPoint.GetRotation();
-			enemy.transform.SetPositionAndRotation(position, rotation);
-			enemy.SetActive(true);
-		}
-
 		[ContextMenu("Colocar inimigo")]
-		private void SpawnEnemy()
+		public void SpawnEnemy()
 		{
 			int index = Random.Range(0, _enemyPools.Length);
 			var enemy = _enemyPools[index].Get();
@@ -29,6 +21,14 @@ namespace Game.Enemies
 				return;
 
 			Intantiate(enemy);
+		}
+
+		private void Intantiate(GameObject enemy)
+		{
+			Vector3 position = _spawnPoint.GetPosition();
+			Quaternion rotation = _spawnPoint.GetRotation();
+			enemy.transform.SetPositionAndRotation(position, rotation);
+			enemy.SetActive(true);
 		}
 	}
 }
