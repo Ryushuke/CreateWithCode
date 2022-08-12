@@ -6,9 +6,13 @@ namespace Game.Stage
 	[AddComponentMenu("Game/Fase/Desativar ao Colidir")]
 	public class DisableOnCollision : MonoBehaviour
 	{
+		[SerializeField]
+		private ColliderUnityEvent _onTriggerEnterAction;
+
 		private void OnTriggerEnter(Collider other)
 		{
 			other.gameObject.SetActive(false);
+			_onTriggerEnterAction.Invoke(other);
 		}
 
 #if UNITY_EDITOR
