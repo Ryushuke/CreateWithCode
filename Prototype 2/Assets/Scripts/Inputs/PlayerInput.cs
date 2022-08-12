@@ -13,11 +13,16 @@ namespace Game.Inputs
 		public float HorizontalInput => horizontalInput;
 		public UnityEvent ShotAction => _shotAction;
 
-		void Update()
+		private void OnDisable()
+		{
+			horizontalInput = 0f;
+		}
+
+		private void Update()
 		{
 			horizontalInput = Input.GetAxis("Horizontal");
 
-			if(Input.GetKeyDown(KeyCode.Space))
+			if (Input.GetKeyDown(KeyCode.Space))
 				_shotAction.Invoke();
 		}
 	}
