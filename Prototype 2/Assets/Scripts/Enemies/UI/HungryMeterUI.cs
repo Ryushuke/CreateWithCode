@@ -15,6 +15,7 @@ namespace Game.Enemies.UI
 		{
 			Color color = _color.Evaluate(value);
 			_image.color = color;
+			_image.fillAmount = value;
 		}
 	}
 }
