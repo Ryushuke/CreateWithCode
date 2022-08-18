@@ -1,7 +1,6 @@
-using Game.Stage;
 using UnityEngine;
 
-namespace Game.Projectile
+namespace Game.Collisions
 {
 	[AddComponentMenu("Game/Projeteis/Detecção de Colisão")]
 	public class CollisionDetection : MonoBehaviour

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Stage
+namespace Game.Collisions
 {
 	[RequireComponent(typeof(Collider))]
 	[AddComponentMenu("Game/Fase/Desativar ao Colidir")]
