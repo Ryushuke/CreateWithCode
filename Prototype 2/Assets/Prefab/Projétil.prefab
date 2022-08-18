@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 977536554785736258}
   - component: {fileID: 7503211330085654557}
   - component: {fileID: 3683609072781874870}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "Proj\xE9til"
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,7 +119,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onCollisionAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6993339585733434456}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1690679256798564772}
+        m_TargetAssemblyTypeName: Game.Projectile.ProjectileBehaviour, Assembly-CSharp
+        m_MethodName: OnCollision
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &6993339586952435058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +154,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 06cdf427476835b42837c1ca7f8cdbd1, type: 3}
       propertyPath: m_Name
       value: Food_Pizza_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 06cdf427476835b42837c1ca7f8cdbd1, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 06cdf427476835b42837c1ca7f8cdbd1, type: 3}
       propertyPath: m_RootOrder

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1347906067158289057}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "Gr\xE1ficos"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,9 +46,9 @@ GameObject:
   - component: {fileID: 3523989389681359400}
   - component: {fileID: -4823928698337892821}
   - component: {fileID: -4133933312646990731}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Inimigo
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,6 +86,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5082970635447697311}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5639258487127919032}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -274,8 +286,20 @@ PrefabInstance:
       value: Medidor de Fome
       objectReference: {fileID: 0}
     - target: {fileID: 646961483724323825, guid: e7340a9971c78a84288783333b342298, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 646961483724323825, guid: e7340a9971c78a84288783333b342298, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 646961484933707250, guid: e7340a9971c78a84288783333b342298, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 646961484969571313, guid: e7340a9971c78a84288783333b342298, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7340a9971c78a84288783333b342298, type: 3}

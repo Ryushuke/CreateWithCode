@@ -2,18 +2,17 @@ using UnityEngine;
 
 namespace Game.Collisions
 {
-	[AddComponentMenu("Game/Projeteis/Detecção de Colisão")]
+	[AddComponentMenu("Game/Colisões/Detecção de Colisão")]
 	public class CollisionDetection : MonoBehaviour
 	{
 		[SerializeField]
-		private ColliderUnityEvent _onCollisionAction;
+		private CollisionUnityEvent _onCollisionAction;
 
-		public ColliderUnityEvent OnCollisionAction => _onCollisionAction;
+		public CollisionUnityEvent OnCollisionAction => _onCollisionAction;
 
 		private void OnCollisionEnter(Collision collision)
 		{
-			gameObject.SetActive(false);
-			OnCollisionAction.Invoke(collision.collider);
+			OnCollisionAction.Invoke(collision);
 		}
 	}
 }

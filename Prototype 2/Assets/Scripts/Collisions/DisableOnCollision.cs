@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Game.Collisions
 {
 	[RequireComponent(typeof(Collider))]
-	[AddComponentMenu("Game/Fase/Desativar ao Colidir")]
+	[AddComponentMenu("Game/Colisões/Desativar ao Colidir")]
 	public class DisableOnCollision : MonoBehaviour
 	{
 		[SerializeField]

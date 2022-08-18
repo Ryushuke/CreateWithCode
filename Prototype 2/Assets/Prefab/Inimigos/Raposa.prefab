@@ -321,10 +321,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raposa
       objectReference: {fileID: 0}
-    - target: {fileID: 5639258487127919032, guid: bee0ada8a405006478c2641b0fc34675, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 5639258487127919033, guid: bee0ada8a405006478c2641b0fc34675, type: 3}
       propertyPath: m_RootOrder
       value: 0
