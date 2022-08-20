@@ -3,13 +3,13 @@ using UnityEngine;
 namespace Game.Collisions
 {
 	[RequireComponent(typeof(Collider))]
-	[AddComponentMenu("Game/Colisões/Desativar ao Colidir")]
-	public class DisableOnCollision : MonoBehaviour
+	[AddComponentMenu("Game/Colisões/Desativar ao Sair da Área")]
+	public class DisableOnLeaveArea : MonoBehaviour
 	{
 		[SerializeField]
 		private ColliderUnityEvent _onTriggerEnterAction;
 
-		private void OnTriggerEnter(Collider other)
+		private void OnTriggerExit(Collider other)
 		{
 			other.gameObject.SetActive(false);
 			_onTriggerEnterAction.Invoke(other);
