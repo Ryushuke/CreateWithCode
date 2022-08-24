@@ -312,6 +312,8 @@ GameObject:
   - component: {fileID: 680085605}
   - component: {fileID: 680085607}
   - component: {fileID: 680085606}
+  - component: {fileID: 680085608}
+  - component: {fileID: 680085609}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -364,6 +366,48 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &680085608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680085604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08342b73b87238f4994fd15d6c93cace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpForce: 10
+--- !u!114 &680085609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680085604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6174d0c79bbee418756e96d71fe3a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _anyKey: 1
+  _jumpKey: 32
+  _triggerAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 680085608}
+        m_TargetAssemblyTypeName: Game.Movements.JumpBehaviour, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &697110580
 GameObject:
   m_ObjectHideFlags: 0
