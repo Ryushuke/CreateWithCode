@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1716182748749341330}
   - component: {fileID: 1716182748749341331}
   - component: {fileID: 1716182748749341328}
+  - component: {fileID: 6267091871479999610}
+  - component: {fileID: 5195975031348342493}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -64,6 +66,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 30
+--- !u!114 &6267091871479999610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716182748749341333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0e0bfc1bbd94b4190d8a3b90dddf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5195975031348342493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716182748749341333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb40c10ad3c9724cbc16a1d96291579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onTriggerEnterAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1716182748749341333}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1716182749875561859
 GameObject:
   m_ObjectHideFlags: 0
