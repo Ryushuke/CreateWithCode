@@ -38,5 +38,5 @@ A pontuação aumentará sempre que o obstáculo deixar a visão do jogador.
 
 ## Técnicas usadas
 
-- [ ] ObjectPooling
-- [ ] Old InputSystem
+- [x] ObjectPooling
+- [x] Old InputSystem
