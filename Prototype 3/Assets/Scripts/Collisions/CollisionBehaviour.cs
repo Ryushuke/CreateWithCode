@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game.Collisions
 {
@@ -7,17 +8,36 @@ namespace Game.Collisions
 	public class CollisionBehaviour : MonoBehaviour
 	{
 		[SerializeField]
+		private string _obstacleTag;
+		[SerializeField]
+		private string _groundTag;
+		[Space]
+		[SerializeField]
 		private GroundedEvent _onGroundedStateChange;
+		[SerializeField]
+		private UnityEvent _onObstacleHit;
 
 		private bool grounded;
 
+		private void ChangeGroundedState(bool value)
+		{
+			grounded = value;
+			_onGroundedStateChange.Invoke(value);
+		}
+
 		private void OnCollisionEnter(Collision collision)
 		{
-			if (grounded)
+			if (!grounded
+				&& collision.gameObject.CompareTag(_groundTag))
+			{
+				ChangeGroundedState(true);
+				return;
+			}
+
+			if (!collision.gameObject.CompareTag(_obstacleTag))
 				return;
 
-			grounded = true;
-			_onGroundedStateChange.Invoke(true);
+			_onObstacleHit.Invoke();
 		}
 
 		private void OnCollisionExit(Collision collision)
@@ -25,8 +45,7 @@ namespace Game.Collisions
 			if (!grounded)
 				return;
 
-			grounded = false;
-			_onGroundedStateChange.Invoke(false);
+			ChangeGroundedState(false);
 		}
 	}
 }
