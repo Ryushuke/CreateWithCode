@@ -421,6 +421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4e6e80b9f0d2e4d822f5d853ebd729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _obstacleTag: Obstacle
+  _groundTag: Ground
   _onGroundedStateChange:
     m_PersistentCalls:
       m_Calls:
@@ -428,6 +430,33 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Game.Movements.JumpBehaviour, Assembly-CSharp
         m_MethodName: set_CanJump
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onObstacleHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 835818922}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 900162711}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -579,7 +608,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2689b9d84d26f5741ab6d01017b3d7fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _resetWidth: 56
 --- !u!1 &900162708
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +793,7 @@ GameObject:
   - component: {fileID: 2014335012}
   m_Layer: 9
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
