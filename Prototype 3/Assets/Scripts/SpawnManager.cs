@@ -1,3 +1,4 @@
+using Game.Movements;
 using Game.Objects;
 using UnityEngine;
 
@@ -11,9 +12,11 @@ namespace Game
 		[SerializeField]
 		private float intervalTime;
 
+		private MoveLeft currentObjstacle;
+
 		public void SetIntervalTime(float time)
 		{
-			CancelInvoke(nameof(Spawn));
+			Stop();
 			intervalTime = time;
 			Start();
 		}
@@ -21,18 +24,30 @@ namespace Game
 		[ContextMenu("Instanciar")]
 		public void Spawn()
 		{
-			GameObject obstacle = _pool.Get();
+			var obstacle = _pool.Get<MoveLeft>();
 
 			if (!obstacle)
 				return;
 
 			obstacle.transform.position = transform.position;
-			obstacle.SetActive(true);
+			obstacle.gameObject.SetActive(true);
+			currentObjstacle = obstacle;
 		}
 
 		public void Start()
 		{
 			InvokeRepeating(nameof(Spawn), intervalTime, intervalTime);
+		}
+
+		public void Stop()
+		{
+			CancelInvoke(nameof(Spawn));
+		}
+
+		private void OnDisable()
+		{
+			Stop();
+			currentObjstacle.enabled = false;
 		}
 	}
 }
